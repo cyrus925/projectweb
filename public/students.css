@@ -1,0 +1,59 @@
+/* Styles généraux */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    
+   
+}
+
+
+
+.container {
+    padding-top: 100px;
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+
+h1 {
+    color: #333;
+}
+
+#table {
+    margin: 30px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    box-shadow: 0 0 5px 0 #333;
+}
+  
+  #table td, #table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #table tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #table tr:hover {background-color: #ddd;}
+  
+  #table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+  }
+
+
+  a {
+    display: block;
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

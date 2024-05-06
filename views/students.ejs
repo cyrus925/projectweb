@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Students</title>
+    <link rel="stylesheet" href="students.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <img src="liste+des+eleves+.gif">
+        <table id="table">
+            <tr>
+                <th>id</th>
+                <th>Nom</th>
+                <th>Ecole</th>
+
+            </tr>
+            <ul>
+                <% students.forEach(function(student) { %>
+                    <tr>
+                        <td>
+                            <%= student.id %>
+                        </td>
+                        <td>
+                            <%= student.name %>
+                        </td>
+                        <td>
+                            <%= student.school %>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </ul>
+        </table>
+        <div > <a href="#">Ajouter un joueur ?</a></div>
+
+    </div>
+</body>
+
+</html>
