@@ -33,11 +33,16 @@ Une fois authentifié, l'utilisateur peut accéder à la liste des étudiants en
 3. **Modification des étudiants**
 L'utilisateur peut éditer les détails d'un étudiant en fournissant l'ID de l'étudiant, son nouveau nom et sa nouvelle école. 
 
-## Captures d'écrans de l'applications
-![Accueil](public/screenshots/accueil.png)
-![Authentification](public/screenshots/authentification.png.png)
-![Listes des élèves](public/screenshots/listedeseleves.png)
-![Exemple d'un élève](public/screenshots/eleve.png)
-
 ## Contributeur
 Ce projet a été réalisé par Cyrus LARGER dans le cadre d'un projet universitaire.
+
+## Captures d'écrans de l'applications
+
+![Accueil](public/screenshots/accueil.png)
+
+![Authentification](public/screenshots/authentification.png)
+
+![Listes des élèves](public/screenshots/listedeseleves.png)
+
+![Exemple d'un élève](public/screenshots/eleve.png)
+
