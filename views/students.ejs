@@ -2,23 +2,37 @@
 <html>
 
 <head>
-    <title>Students</title>
+    <title>Eleves</title>
     <link rel="stylesheet" href="students.css">
 </head>
 
 <body>
+    <header>
+
+        <img src="epf+hotel.gif">
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <!-- <li><a href="#">À Propos</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
     <div class="container">
 
         <img src="liste+des+eleves+.gif">
         <table id="table">
             <tr>
-                <th>id</th>
+                <th>Identifiant</th>
                 <th>Nom</th>
                 <th>Ecole</th>
+                <th>Action</th>
 
             </tr>
             <ul>
-                <% students.forEach(function(student) { %>
+                <% students.forEach(function(student,index) { %>
                     <tr>
                         <td>
                             <%= student.id %>
@@ -29,13 +43,38 @@
                         <td>
                             <%= student.school %>
                         </td>
+                        <td>
+                            <a href="/students/<%= index %>"> En savoir plus</a>
+                        </td>
                     </tr>
                     <% }) %>
             </ul>
         </table>
-        <div > <a href="#">Ajouter un joueur ?</a></div>
+        <div id="container2">
+            <p style="font-weight: bold;">Editer un joueur ?</p>
+            <form action="/editStudent" method="post">
+                <div>
+                    <label>S'il vous plait insérer l'id disponible dans le tableau.</label>
+                    <input type="text" name="id" placeholder="ID">
+                </div>
+                <div>
+                    <label>Nom</label>
+                    <input type="text" name="name" placeholder="Nom">
+                </div>
+                <div>
+                    <label>Ecole</label>
+                    <input type="text" name="school" placeholder="Ecole">
+                </div>
+                <div id="submit">
+                    <input type="submit" value="Valider">
+                </div>
+            </form>
+        </div>
 
     </div>
+    <footer>
+        <p>&copy; 2024 EPF HOTEL. Tous droits réservés.</p>
+    </footer>
 </body>
 
 </html>

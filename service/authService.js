@@ -1,15 +1,6 @@
 const axios = require('axios');
 baseURL="http://localhost:3001"
     const AuthServices = {
-        loginUser: async (body) => {
-            return axios.post("http://localhost:3001/api/user/login", body)
-                .then(response => {
-                    return response.data
-                })
-                .catch(error => {
-                    throw error
-                })
-        },
     registerUser: async (body) => {
         return axios.post(`http://localhost:3001/api/user/register`, body)
             .then(response => {
@@ -37,7 +28,18 @@ baseURL="http://localhost:3001"
             .catch(error => {
                 throw error
             })
-    }
+    },
+    editStudent: async(id,body) => {
+        console.log("service id", id)
+        console.log(body);
+        return axios.post(`${baseURL}/api/student/${id}`, body)
+        .then(response =>{
+            return response.data
+        })
+        .catch(error =>{
+            throw error
+        })
+    },
 };
 
 module.exports = AuthServices;

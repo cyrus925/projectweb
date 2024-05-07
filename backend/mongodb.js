@@ -41,40 +41,7 @@ app.use(bodyParser.json());
 const User = mongoose.model('User2', logInSchema);
 const Student = mongoose.model('Student', students);
 
-const loginUser = async (req, res) => {
-  try {
-    const { name, password } = req.body;
-    const userData = {
-      name,
-      password,
-    };
-    const isAdded = await User.find({ name }).maxTimeMS(2000000);;
-    console.log("isAdded", isAdded);
-    if (isAdded) {
-      console.log("isAdded.password", isAdded[0].password);
-      console.log("password", password);
-      if (isAdded[0].password === password) {
-        res.send({
-          message: "okay okay"
-        });
-      } else {
-        console.log("else");
-        res.send({
-          message: "Invalid  password!",
-        });
-      }
-    }
-    else {
-      res.send({
-        message: "Invalid  mail!",
-      });
-    }
-  } catch (err) {
-    res.send({
-      message: "Invalid  mail!",
-    });
-  }
-};
+
 
 const router = express.Router();
   
@@ -155,16 +122,17 @@ const router = express.Router();
           student.name = req.body.name;
           student.school = req.body.school;
           await student.save();
+          console.log("student Updated Successfully!")
           res.send({ message: "student Updated Successfully!" });
         }
       }
       catch (err) {
-        res.status(500).send({
+        res.send({
           message: err.message,
         });
       }
     }
-    router.put("/:id", editStudent);
+    router.post("/:id", editStudent);
     const getAllStudents = async (req, res) => {
       try {
         
@@ -177,30 +145,18 @@ const router = express.Router();
         });
       }
     };
-    const getStudent = async (req, res) => {
-      try {
-        const student = await Student.findById({ _id: req.params.id });
-  
-        res.send(student);
-      } catch (err) {
-        res.status(500).send({
-          message: err.message,
-        });
-      }
-    };
-    app.use("/api/student", router);
-    router.post("/add",addStudents);
-    router.get('/all', getAllStudents);
-    router.get('/:id', getStudent);
-    router.post("/login",loginUser);
-  
 
-    app.use("/api/user", router);
-    router.post("/register",registerUser);
     
-    // Monter le routeur sur l'application principale
+    app.use("/api", router);
+    router.post("/student/add",addStudents);
+    router.get('/student/all', getAllStudents);
+    router.post('/student/:id', editStudent);
+  
+    router.post("/user/register",registerUser);
+    router.get("/user/all",getAllUsers);
     
-    router.get("/all",getAllUsers);
+    
+    
 
   
     

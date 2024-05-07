@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Détails de l'étudiant</title>
+    <link rel="stylesheet" href="/student.css">
+</head>
+
+<body>
+    <header>
+
+        <img src="/epf+hotel.gif">
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                <!-- <li><a href="#">À Propos</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li> -->
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+    <h1>Détails de l'étudiant</h1>
+    <ul>
+        <li><strong>ID:</strong>
+            <%= student._id %>
+        </li>
+        <li><strong>Nom:</strong>
+            <%= student.name %>
+        </li>
+        <li><strong>École:</strong>
+            <%= student.school %>
+        </li>
+        <!-- Ajoutez d'autres détails de l'étudiant ici selon vos besoins -->
+    </ul>
+    <img id="randomImage">
+    </div>
+    <footer>
+        <p>&copy; 2024 EPF HOTEL. Tous droits réservés.</p>
+    </footer>
+    <script src="/student.js"></script>
+</body>
+
+
+</html>

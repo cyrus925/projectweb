@@ -60,7 +60,19 @@ nav ul li a {
 .btn:hover {
     background: #555;
 }
+#imgcontainer {
+    margin: 40px auto;
+    width: 300px; /* ajustez la largeur selon vos besoins */
+  height: 200px; /* ajustez la hauteur selon vos besoins */
+  overflow: hidden;
 
+}
+img {
+    width: 100%; /* assure que l'image remplit entièrement son conteneur en largeur */
+    height: auto; /* maintient le ratio d'aspect de l'image */
+    display: block; /* garantit que l'image se comporte correctement dans son conteneur */
+  
+}
 footer {
     background: #333;
     color: #fff;
